@@ -9,6 +9,7 @@ import Statistics from './components/Statistics/Statistics';
 import Appliedjobs from './components/Appliedjobs/Appliedjobs';
 import Blogs from './components/Blogs/Blogs';
 import Main from './components/Layout/Main';
+import FeaturesDetails from './components/FeaturesDetails/FeaturesDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home/>,
         loader:()=>fetch('/featuresJobs.json')
+      },
+      {
+        path: "friend/:friendId",
+        element: <FeaturesDetails/>,
+        loader:()=>fetch(`/featuresJobs.json`)
       },
       {
         path: "/statistics",

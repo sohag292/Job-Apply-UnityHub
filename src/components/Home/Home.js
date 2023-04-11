@@ -8,6 +8,7 @@ import Feature from '../Feature/Feature';
 
 export default function Home() {
   const [jobCategory, setjobCategory] = useState([]);
+  const [show ,setShow] = useState(false)
    const features = useLoaderData();
    
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function Home() {
       .then(res => res.json())
       .then(data => setjobCategory(data))
   }, [])
+
 
   return (
     <div>
@@ -57,8 +59,24 @@ export default function Home() {
       </div>
       <div className='container my-4'>
           <div className='row'>
-          {
+          {/* {
             features.map(feature =><Feature
+              key={feature.id}
+              feature={feature}
+            >
+            </Feature>)
+          } */}
+          {
+            show || features.slice(0,4).map(feature =><Feature
+              key={feature.id}
+              feature={feature}
+            >
+            </Feature>)
+
+          }
+
+          {
+            show && features.map(feature =><Feature
               key={feature.id}
               feature={feature}
             >
@@ -66,7 +84,10 @@ export default function Home() {
           }
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-center">
-            <button className="details-btn me-md-2" type="button">See All Jobs</button>
+            {/* <button onClick={()=>setShow(true)} className="details-btn me-md-2" type="button">See All Jobs</button> */}
+            {
+              show || <button onClick={()=>setShow(true)} className="details-btn me-md-2" type="button">See All Jobs</button>
+            }
           </div>
       </div>
     </div>

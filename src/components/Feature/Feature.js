@@ -1,9 +1,10 @@
 import React from 'react'
 import './Feature.css'
 import {FaSearchLocation, FaDollarSign} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Feature({feature}) {
-    const{image, company_name, job_title,work_area,time,address,salary}= feature;
+    const{image, company_name, job_title,work_area,time,address,salary,id}= feature;
 
   return (
     <div className="col-sm-6">
@@ -20,7 +21,9 @@ export default function Feature({feature}) {
             <p className='me-4 text-gray fw-bold'><FaSearchLocation/> {address}</p>
             <p className='text-gray fw-bold'><FaDollarSign/>Salary: {salary}</p>
         </div>
-        <button className='details-btn'>View Details</button>
+        {/* <button className='details-btn'>View Details</button> */}
+        <Link to={`/friend/${id}`} className='details-btn'>View Details</Link>
+        
       </div>
     </div>
     
