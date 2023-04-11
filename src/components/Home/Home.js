@@ -34,7 +34,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className='container my-5'>
         <div className='text-center'>
           <h1>Job Category List</h1>
@@ -50,7 +49,6 @@ export default function Home() {
           }
         </div>
       </div>
-
       <div className='container my-5'>
       <div className='text-center'>
           <h1>Features Jobs</h1>
@@ -66,6 +64,9 @@ export default function Home() {
             >
             </Feature>)
           }
+          </div>
+          <div className="d-grid gap-2 d-md-flex justify-content-center">
+            <button className="details-btn me-md-2" type="button">See All Jobs</button>
           </div>
       </div>
     </div>

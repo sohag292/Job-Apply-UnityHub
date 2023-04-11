@@ -23,6 +23,7 @@ export default function Feature({feature}) {
         <button className='details-btn'>View Details</button>
       </div>
     </div>
+    
   </div>
   
 
