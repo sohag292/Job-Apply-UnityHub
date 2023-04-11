@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import img from '../../image/cover.png'
 import './Home.css'
 import Job from '../JobCategory/Job';
+import { useLoaderData } from 'react-router-dom';
+import Feature from '../Feature/Feature';
 
 
 export default function Home() {
   const [jobCategory, setjobCategory] = useState([]);
-
+   const features = useLoaderData();
+   
   useEffect(() => {
     fetch('jopCategory.json')
       .then(res => res.json())
@@ -33,14 +36,14 @@ export default function Home() {
       </div>
 
       <div className='container my-5'>
-        <div class='text-center'>
+        <div className='text-center'>
           <h1>Job Category List</h1>
-          <p class='text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+          <p className='text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
         </div>
-        <div class='row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
+        <div className='row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
           {
             jobCategory.map(job =>
-              <div class='col' key={job.id}>
+              <div className='col' key={job.id}>
                 <Job job={job}></Job>
               </div>
             )
@@ -49,10 +52,21 @@ export default function Home() {
       </div>
 
       <div className='container my-5'>
-      <div class='text-center'>
+      <div className='text-center'>
           <h1>Features Jobs</h1>
-          <p class='text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+          <p className='text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
         </div>
+      </div>
+      <div className='container my-4'>
+          <div className='row'>
+          {
+            features.map(feature =><Feature
+              key={feature.id}
+              feature={feature}
+            >
+            </Feature>)
+          }
+          </div>
       </div>
     </div>
   )

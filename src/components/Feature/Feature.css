@@ -1,0 +1,12 @@
+.text-gray{
+    color: #757575;
+}
+
+.details-btn{
+    background: linear-gradient(90deg, #7E90FE 0%, #9873FF 100%);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
