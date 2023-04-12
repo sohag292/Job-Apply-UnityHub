@@ -10,6 +10,7 @@ import Appliedjobs from './components/Appliedjobs/Appliedjobs';
 import Blogs from './components/Blogs/Blogs';
 import Main from './components/Layout/Main';
 import FeaturesDetails from './components/FeaturesDetails/FeaturesDetails';
+import cartProductLoader from './loader/cartProductLoader';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/appliedjobs",
         element: <Appliedjobs/>,
+        loader:()=>fetch(`/featuresJobs.json`)
+
+        
+
       },
       {
         path: "/blogs",
