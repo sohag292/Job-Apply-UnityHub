@@ -29,7 +29,7 @@ export default function Appliedjobs() {
 
       <h1 className='text-center bg-light p-5'>Applied Jobs</h1>
       <div className='container d-flex'>
-        <div className="ms-auto">
+        <div className="ms-auto mb-3">
           <select name="" id="" value={filter} onChange={(e) => setFilter(e.target.value)}>
             <option value="All">All</option>
             <option value="Remote">Remote</option>
