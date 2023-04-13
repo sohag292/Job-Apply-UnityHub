@@ -123,4 +123,4 @@ const router = createBrowserRouter([
 ```
 
 
-Project Link: : [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://glowing-chimera-db0e43.netlify.app/)
+Project Link: : [https://github.io/create-react-app/](https://glowing-chimera-db0e43.netlify.app/)

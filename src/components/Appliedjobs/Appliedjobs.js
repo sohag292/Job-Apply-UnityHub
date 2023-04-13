@@ -26,6 +26,7 @@ export default function Appliedjobs() {
 
   return (
     <div className="">
+
       <h1 className='text-center bg-light p-5'>Applied Jobs</h1>
       <div className='container d-flex'>
         <div className="ms-auto">
