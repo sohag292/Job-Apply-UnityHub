@@ -16,20 +16,19 @@ export default function Statistics() {
   ];
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
-    <div style={{ width: '80%' }}>
-      <h2 className='text-center py-5'>Assignment Statistics</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <AreaChart
-          data={data}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey="marks" stroke="#8884d8" fill="#5124d8" fillOpacity={0.3} />
-        </AreaChart>
-      </ResponsiveContainer>
+      <div style={{ width: '80%' }}>
+        <h2 className='text-center py-5'>Assignment Statistics</h2>
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name"/>
+            <YAxis />
+            <Tooltip />
+            <Area type="monotone" dataKey="marks" stroke="#8884d8" fill="#5124d8" fillOpacity={0.3} />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
-  </div>
   )
 }
+

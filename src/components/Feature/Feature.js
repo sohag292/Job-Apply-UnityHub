@@ -17,11 +17,10 @@ export default function Feature({feature}) {
           <button className='btn btn-outline-primary me-3  fw-bold'>{work_area}</button>
           <button className='btn btn-outline-primary  fw-bold'>{time}</button>
         </div>
-        <div className="d-flex">
+        <div className="d-flex flex-column flex-sm-row ">
             <p className='me-4 text-gray fw-bold'><FaSearchLocation/> {address}</p>
             <p className='text-gray fw-bold'><FaDollarSign/>Salary: {salary}</p>
         </div>
-        {/* <button className='details-btn'>View Details</button> */}
         <Link to={`/friend/${id}`} className='details-btn'>View Details</Link>
         
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './FeaturesDetails.css'
 import { useLoaderData, useParams } from 'react-router-dom';
 import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone,HiOutlineCurrencyDollar,HiOutlineCalendar } from "react-icons/hi";
@@ -19,7 +19,7 @@ export default function FeaturesDetails() {
     const {job_description,responsibillity, education, experience, salary, job_title,phone,email, address} = details;
     // console.log(details);
   return (
-    <div>
+    <div className='mb-5'>
       <h1 className="text-center bg-light py-5 mb-4">Job Details</h1>
       <div className="container">
       <div className="row">
@@ -41,8 +41,8 @@ export default function FeaturesDetails() {
             <p><HiOutlineMail className='icon-info'/><b>Email: </b>{email}</p>
             <p><HiOutlineLocationMarker className='icon-info'/><b>Address:</b>{address}</p>
           </div>
-          <div class="d-grid gap-2 col-12 mx-auto">
-             <button onClick={()=>sadData(details.id)} class="btn btn-primary text-btn" type="button">Appl now </button>
+          <div className="d-grid gap-2 col-12 mx-auto">
+             <button onClick={()=>sadData(details.id)} className="btn btn-primary text-btn" type="button">Apply Now </button>
           </div>
         </div>
       </div>

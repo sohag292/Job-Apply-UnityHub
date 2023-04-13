@@ -1,32 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
-import {FaSearchLocation, FaDollarSign} from 'react-icons/fa';
-// import Applydetails from '../applydetails/applydetails';
+import { useState, useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { getShoppingCart } from '../../utilities/Fake';
 import Applydetails from '../Applydetails/Applydetails';
+
 export default function Appliedjobs() {
-  
-  const saveCart = useLoaderData();
-  // const dataOnsite = (data) => {
-  //   if (data == "Onsite") {
-  //     const onsite = saveCart.filter(
-  //       (data) => data.work_area === "Onsite"
-  //     );
-  //     setCarts(onsite);
-  //   } else if (data == "all") {
-  //     setCarts(saveCart);
-  //   }
-  // };
+  const [cart, setCart] = useState([]);
+  const pData = useLoaderData();
+
+  useEffect(() => {
+    const saveCart = getShoppingCart();
+    let newArr = [];
+    for (const id in saveCart) {
+      const foundProduct = pData.find((product) => product.id === id);
+      if (foundProduct) {
+        foundProduct.quantity = saveCart[id];
+        newArr.push(foundProduct);
+      }
+    }
+    setCart(newArr);
+  }, [pData]);
+  console.log(cart);
 
   return (
-    <div className=''>
-       
+    <div className="">
+      <h1 className='text-center bg-light p-5'>Applied Jobs</h1>
+      {
+        cart.map((carts)=><Applydetails
+        key={carts.id}
+        carts={carts}
+        
+        >
 
-            {saveCart.map((card) => (
-        <Applydetails key={card?.id} card={card}></Applydetails>
-      ))}
-
-
-      
+        </Applydetails>)
+      }
     </div>
-  )
+  );
 }
