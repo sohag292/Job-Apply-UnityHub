@@ -21,7 +21,7 @@ export default function Feature({feature}) {
             <p className='me-4 text-gray fw-bold'><FaSearchLocation/> {address}</p>
             <p className='text-gray fw-bold'><FaDollarSign/>Salary: {salary}</p>
         </div>
-        <Link to={`/friend/${id}`} className='details-btn'>View Details</Link>
+        <Link to={`/job/${id}`} className='details-btn'>View Details</Link>
         
       </div>
     </div>

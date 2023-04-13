@@ -59,6 +59,7 @@ export default function Home() {
       </div>
       <div className='container my-4'>
           <div className='row'>
+
           {
             show || features.slice(0,4).map(feature =><Feature
               key={feature.id}
@@ -77,6 +78,7 @@ export default function Home() {
           }
           </div>
           <div className="d-grid gap-2 d-md-flex justify-content-center">
+            {/* <button onClick={()=>setShow(true)} className="details-btn me-md-2" type="button">See All Jobs</button> */}
             {
               show || <button onClick={()=>setShow(true)} className="details-btn me-md-2" type="button">See All Jobs</button>
             }

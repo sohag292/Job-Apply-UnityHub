@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 sohag">
       <div className="container">
-        <Link to="/" className="navbar-brand fw-bold fs-3" >Unity<span className='text-info'>H</span>ub</Link>
+        <Link to="/" className="navbar-brand fw-bold fs-1" >Unity<span className='text-info'>H</span>ub</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

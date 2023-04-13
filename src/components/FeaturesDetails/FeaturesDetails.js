@@ -5,16 +5,16 @@ import { HiOutlineLocationMarker, HiOutlineMail, HiOutlinePhone,HiOutlineCurrenc
 import { addToDb } from '../../utilities/Fake';
 
 export default function FeaturesDetails() {
-  const friend = useLoaderData();
-    const {friendId}= useParams();
+  const job = useLoaderData();
+    const {jobId}= useParams();
 
   const sadData = (id)=>{
-    const data = addToDb(id);
+    addToDb(id);
   }
 
     let details = {}
-    if(friend){
-      details = friend.find(data =>data.id === friendId)
+    if(job){
+      details = job.find(data =>data.id === jobId)
     }
     const {job_description,responsibillity, education, experience, salary, job_title,phone,email, address} = details;
     // console.log(details);

@@ -2,7 +2,6 @@ import React from 'react';
 import './Statistics.css'
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
-
 export default function Statistics() {
   const data = [
     { name: 'Assignment 1', marks: 60 },
@@ -21,7 +20,7 @@ export default function Statistics() {
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name"/>
+            <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Area type="monotone" dataKey="marks" stroke="#8884d8" fill="#5124d8" fillOpacity={0.3} />

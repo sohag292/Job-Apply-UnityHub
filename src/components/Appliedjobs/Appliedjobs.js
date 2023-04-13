@@ -1,36 +1,46 @@
 import { useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { getShoppingCart } from '../../utilities/Fake';
+import { getmanCart } from '../../utilities/Fake';
 import Applydetails from '../Applydetails/Applydetails';
 
 export default function Appliedjobs() {
   const [cart, setCart] = useState([]);
+  const [filter, setFilter] = useState('All');
   const pData = useLoaderData();
 
   useEffect(() => {
-    const saveCart = getShoppingCart();
+    const saveJob = getmanCart();
     let newArr = [];
-    for (const id in saveCart) {
-      const foundProduct = pData.find((product) => product.id === id);
-      if (foundProduct) {
-        foundProduct.quantity = saveCart[id];
-        newArr.push(foundProduct);
+    for (const id in saveJob) {
+      const foundjob = pData.find((job) => job.id === id);
+      if (foundjob) {
+        foundjob.quantity = saveJob[id];
+        newArr.push(foundjob);
       }
     }
     setCart(newArr);
   }, [pData]);
-  console.log(cart);
+
+ 
+  const filteredCart = filter === 'All' ? cart : cart.filter(c => c.work_area === filter);
 
   return (
     <div className="">
       <h1 className='text-center bg-light p-5'>Applied Jobs</h1>
+      <div className='container d-flex'>
+        <div className="ms-auto">
+          <select name="" id="" value={filter} onChange={(e) => setFilter(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Remote">Remote</option>
+            <option value="OnSite">OnSite</option>
+          </select>
+        </div>
+      </div>
       {
-        cart.map((carts)=><Applydetails
-        key={carts.id}
-        carts={carts}
-        
+        filteredCart.map((carts) => <Applydetails
+          key={carts.id}
+          carts={carts}
         >
-
         </Applydetails>)
       }
     </div>
